@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: aliceblue;
+    font-size: larger;
+    font-family: 'Palette Mosaic', sans-serif;
+    line-height: 2;
+}
+
+a {
+    text-decoration: none;
+    color: #fffdeaa6;
+}
+
+p {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px;
+    grid-template-areas: "one one one " "two  two two" "three three three ";
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: three;
+}
+
+section {
+    margin: 20px;
+    grid-area: two;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    grid-area: one;
+}
+
+.profile {
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+    width: 50%;
+    filter: grayscale(100%);
+}
+
+a:hover {
+    color: #fcef7f;
+}
+
+.active {
+    text-decoration: underline;
+    color: #fcef7f;
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        font-size: medium;
+    }
+    .container {
+        margin: 30px 10px;
+    }
+    .profile {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 30px 10px;
+    }
+    section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "one" "two";
+        justify-items: center;
+    }
+    .profile {
+        width: 40%;
+        grid-area: one;
+    }
+}
